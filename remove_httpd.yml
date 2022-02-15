@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: remove httpd package
+    yum:
+      name: httpd
+      state: absent
+
+  - name: add php support for httpd
+    yum:
+      name: php
+      state: absent
